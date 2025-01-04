@@ -1,0 +1,130 @@
+/*
+1col 1 row - gr-item
+1 row 2 col -gr-item__col_dbl
+2row 1 col - gr-item_row_dbl
+2 row 2 col - gr-item_full
+*/
+@import url(./vars.css);
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+}
+html,
+body {
+  min-height: 100vh;
+  font-size: var(--main-font-size);
+  font-family: var(--main-font-family);
+  color: #fff;
+}
+.header,
+.main {
+  max-width: var(--container-width);
+  margin: 0 auto;
+  padding-top: 120px;
+}
+.title {
+  font-family: "Delius Unicase", serif;
+  font-weight: 300;
+  color: #000;
+}
+.title_1 {
+  text-align: center;
+  font: 2.1rem;
+}
+.title_2 {
+  text-align: center;
+  font: 2.1rem;
+  margin-bottom: 60px;
+}
+.section {
+  margin-bottom: 120px;
+}
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(auto-fit, minmax(370px, 1fr));
+  gap: 30px;
+}
+.grid-item__img {
+  object-fit: contain;
+  height: 100%;
+  border-radius: 20px;
+}
+.gr-item {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  border-radius: 20px;
+  overflow: hidden;
+  cursor: pointer;
+  /* filter: blur(1px); */
+}
+
+.grid-item__img {
+  object-fit: cover;
+  filter: blur(1px);
+}
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(
+    360deg,
+    rgba(36, 31, 36, 1) 2%,
+    rgba(91, 91, 91, 0.447552) 25%,
+    rgba(187, 186, 192, 0.26) 60%
+  );
+}
+.gr-item__col_dbl {
+  /* grid-column-start: 2;
+  grid-column-end: 4; */
+  grid-column: span 2;
+}
+.grid-item__img,
+.overlay:hover {
+  filter: blur(0);
+  background: linear-gradient(
+    360deg,
+    #241f24 1.04%,
+    rgba(91, 91, 91, 0.26) 6.99%,
+    rgba(187, 186, 192, 0) 12.29%
+  );
+}
+.gr-item__title {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+}
+.gr-item__date {
+  color: #e0e0e0;
+  font-weight: 400;
+}
+.gr-item__icons {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  opacity: 0;
+}
+
+.gr-item:hover > .gr-item__icons {
+  opacity: 1;
+}
+.gr-item__full {
+  grid-column: span 2;
+  grid-row: span 2;
+}
+.gr-item_row_dbl {
+  grid-row: span 2;
+}
