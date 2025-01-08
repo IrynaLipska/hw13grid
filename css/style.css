@@ -115,11 +115,13 @@ body {
   top: 0;
   left: 0;
   width: 100%;
+  /* opacity: 0; */
+}
+.gr-item__icon {
   opacity: 0;
 }
-
-.gr-item:hover > .gr-item__icons {
-  opacity: 1;
+.gr-item:hover .gr-item__icon {
+  opacity: 0.2;
 }
 .gr-item__full {
   grid-column: span 2;
@@ -127,4 +129,7 @@ body {
 }
 .gr-item_row_dbl {
   grid-row: span 2;
+}
+.gr-item .gr-item__icon:hover {
+  opacity: 1;
 }
