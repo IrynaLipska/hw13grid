@@ -24,7 +24,7 @@ body {
   padding-top: 120px;
 }
 .title {
-  font-family: "Delius Unicase", serif;
+  font-family: 'Delius Unicase', serif;
   font-weight: 300;
   color: #000;
 }
@@ -93,6 +93,7 @@ body {
     rgba(187, 186, 192, 0) 12.29%
   );
 }
+
 .gr-item__title {
   display: flex;
   justify-content: space-between;
@@ -115,11 +116,13 @@ body {
   top: 0;
   left: 0;
   width: 100%;
+  /* opacity: 0; */
+}
+.gr-item__icon {
   opacity: 0;
 }
-
-.gr-item:hover > .gr-item__icons {
-  opacity: 1;
+.gr-item:hover .gr-item__icon {
+  opacity: 0.2;
 }
 .gr-item__full {
   grid-column: span 2;
@@ -127,4 +130,7 @@ body {
 }
 .gr-item_row_dbl {
   grid-row: span 2;
+}
+.gr-item .gr-item__icon:hover {
+  opacity: 1;
 }
