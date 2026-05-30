@@ -83,7 +83,9 @@ body {
   grid-column-end: 4; */
   grid-column: span 2;
 }
-.grid-item__img,
+.grid-item__img:hover {
+  transform: scale(1.05);
+}
 .overlay:hover {
   filter: blur(0);
   background: linear-gradient(
@@ -93,7 +95,9 @@ body {
     rgba(187, 186, 192, 0) 12.29%
   );
 }
-
+/* .grid-item__img:hover {
+  transform: scale(2.05);
+} */
 .gr-item__title {
   display: flex;
   justify-content: space-between;
